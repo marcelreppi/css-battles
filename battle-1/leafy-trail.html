@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <div></div>
+
+    <style>
+      body {
+        background: #0b2429;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        position: relative;
+        background: #998235;
+        width: 150px;
+        height: 150px;
+        border-radius: 67% 0 67% 0;
+      }
+      div::before {
+        position: absolute;
+        left: -50px;
+        content: "";
+        background: #1a4341;
+        width: 150px;
+        height: 150px;
+        border-radius: 67% 0 67% 0;
+        z-index: -1;
+      }
+      div::after {
+        position: absolute;
+        right: -50px;
+        content: "";
+        background: #f3ac3c;
+        width: 150px;
+        height: 150px;
+        border-radius: 67% 0 67% 0;
+        z-index: 1;
+      }
+    </style>
+  </body>
+</html>

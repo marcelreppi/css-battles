@@ -1,0 +1,69 @@
+<html>
+  <body>
+    <div class="rotate left"></div>
+    <div></div>
+    <div class="rotate right"></div>
+
+    <style>
+      body {
+        background: #f5d6b4;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 100px;
+        height: 50px;
+        background: #d86f45;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        margin-top: -50px;
+        position: relative;
+      }
+      div::before {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        background: #f5d6b4;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        left: 20px;
+        top: 20px;
+      }
+      .rotate {
+        transform: rotate(180deg);
+        margin-top: 50px;
+      }
+      .left {
+        margin-right: -20px;
+      }
+      .left::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background: #d86f45;
+        top: 50px;
+        right: 0;
+      }
+      .right {
+        margin-left: -20px;
+      }
+      .right::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background: #d86f45;
+        top: 50px;
+        left: 0;
+      }
+    </style>
+  </body>
+</html>

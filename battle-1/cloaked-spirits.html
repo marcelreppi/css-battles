@@ -1,0 +1,67 @@
+<html>
+  <body>
+    <div class="outer"></div>
+    <div class="inner"></div>
+    <div class="outer"></div>
+
+    <style>
+      body {
+        background: #62306d;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .outer {
+        background: #f7ec7d;
+        width: 100px;
+        height: 100px;
+        position: relative;
+      }
+      .outer::before {
+        content: "";
+        position: absolute;
+        background: #aa445f;
+        width: 100px;
+        height: 100px;
+        top: -50px;
+        border-radius: 50%;
+      }
+      .outer::after {
+        content: "";
+        position: absolute;
+        background: #e38f66;
+        width: 60px;
+        height: 60px;
+        left: 20px;
+        top: -30px;
+        border-radius: 50%;
+      }
+      .inner {
+        background: #f7ec7d;
+        width: 100px;
+        height: 200px;
+        position: relative;
+      }
+      .inner::before {
+        content: "";
+        position: absolute;
+        background: #e38f66;
+        width: 100px;
+        height: 100px;
+        top: -50px;
+        border-radius: 50%;
+      }
+      .inner::after {
+        content: "";
+        position: absolute;
+        background: #aa445f;
+        width: 60px;
+        height: 60px;
+        left: 20px;
+        top: -30px;
+        border-radius: 50%;
+      }
+    </style>
+  </body>
+</html>
