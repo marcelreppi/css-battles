@@ -19,101 +19,12 @@
     <h1>CSS Battles</h1>
 
     <div class="container">
-      <div>
-        <h2>Battle #1</h2>
-        <ol>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/01-simply-square.html"
-            >
-              Simply Square
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/02-carrom.html"
-            >
-              Carrom
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/03-push-button.html"
-            >
-              Push Buttom
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/04-ups-n-downs.html"
-            >
-              Ups n Downs
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/05-acid-rain.html"
-            >
-              Acid Rain
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/06-missing-slice.html"
-            >
-              Missing Slice
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/07-leafy-trail.html"
-            >
-              Leafy Trail
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/08-forking-crazy.html"
-            >
-              Forking Crazy
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/09-tesseract.html"
-            >
-              Tesseract
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/10-cloaked-spirits.html"
-            >
-              Cloaked Spirits
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/11-eye-of-sauron.html"
-            >
-              Eye of Sauron
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://marcelreppi.github.io/css-battles/battle-1/12-wiggly-moustache.html"
-            >
-              Wiggly Moustache
-            </a>
-          </li>
-        </ol>
+      <div id="battle-1">
+        <h2>Battle #1 - Pilot Battle</h2>
       </div>
-      <!-- <div>
-        <h2>Battle 2</h2>
-        <ol>
-          <li><a href="">Next</a></li>
-        </ol>
-      </div> -->
+      <div id="battle-2">
+        <h2>Battle #2 - Visibility</h2>
+      </div>
     </div>
   </body>
 
@@ -153,6 +64,68 @@
       color: rgb(255, 0, 234);
     }
   </style>
+  <script>
+    const pad = (x) => (x < 10 ? `0${x}` : x.toString())
+    const baseURL = "https://marcelreppi.github.io/css-battles"
+    let count = 0
+
+    function addBattle(parentId, battles) {
+      const olTag = document.createElement("ol")
+      olTag.start = count + 1
+
+      for (let i = 0; i < battles.length; i++) {
+        const battle = battles[i]
+        const liTag = document.createElement("li")
+        const aTag = document.createElement("a")
+        const battleFilename = battle.toLowerCase().split(" ").join("-")
+        aTag.href = [
+          baseURL,
+          "/",
+          parentId,
+          "/",
+          pad(count + i + 1),
+          "-",
+          battleFilename,
+          ".html",
+        ].join("")
+        aTag.textContent = battle
+
+        liTag.append(aTag)
+        olTag.append(liTag)
+      }
+
+      const parent = document.getElementById(parentId)
+      parent.append(olTag)
+
+      count += battles.length
+    }
+
+    const battle1 = [
+      "Simply Square",
+      "Carrom",
+      "Push Button",
+      "Ups n Downs",
+      "Acid Rain",
+      "Missing Slice",
+      "Leafy Trail",
+      "Forking Crazy",
+      "Tesseract",
+      "Cloaked Spirits",
+      "Eye of Sauron",
+      "Wiggly Moustache",
+    ]
+    const battle2 = [
+      "Totally Triangle",
+      "Web Maker Logo",
+      "Overlap",
+      "Eye of the Tiger",
+      "Fidget Spinner",
+      "Matrix",
+    ]
+
+    addBattle("battle-1", battle1)
+    addBattle("battle-2", battle2)
+  </script>
   <noscript>
     <style>
       body {
