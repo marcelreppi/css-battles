@@ -1,0 +1,69 @@
+<html>
+  <body>
+    <div class="lr l"></div>
+    <div class="lr r"></div>
+    <div class="c"></div>
+    <div class="ud u"></div>
+    <div class="ud d"></div>
+    <style>
+      body {
+        background: #09042a;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        position: relative;
+      }
+      .lr {
+        width: 80px;
+        height: 80px;
+        background: #e78481;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .lr::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background: #09042a;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+      }
+      .l {
+        left: 100px;
+      }
+      .r {
+        right: 100px;
+      }
+      .ud {
+        width: 60px;
+        height: 60px;
+        background: #f5bb9c;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: 0 0 0 10px #09042a;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .u {
+        top: 67px;
+      }
+      .d {
+        top: 173px;
+      }
+      .c {
+        width: 100px;
+        height: 52px;
+        background: #e78481;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 150px;
+        z-index: -1;
+      }
+    </style>
+  </body>
+</html>
