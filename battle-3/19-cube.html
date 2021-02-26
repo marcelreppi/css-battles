@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <div></div>
+    <style>
+      body {
+        background: #0b2429;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background: #f3ac3c;
+        transform: translateY(35px) rotate(45deg);
+        position: relative;
+      }
+      div::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        background: #998235;
+        left: -75px;
+        top: 0;
+        transform: rotate(90deg) skew(-45deg);
+      }
+      div::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        background: #1a4341;
+        right: 25px;
+        top: -50px;
+        transform: skew(45deg);
+      }
+    </style>
+  </body>
+</html>

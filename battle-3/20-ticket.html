@@ -1,0 +1,71 @@
+<html>
+  <body>
+    <div class="left">
+      <div class="c tl"></div>
+      <div class="c small tr"></div>
+      <div class="c bl"></div>
+      <div class="c small br"></div>
+    </div>
+    <div class="right">
+      <div class="c tr"></div>
+      <div class="c br"></div>
+    </div>
+    <style>
+      body {
+        background: #62306d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        position: relative;
+      }
+      .left {
+        width: 140px;
+        height: 100px;
+        background: #f7ec7d;
+      }
+      .right {
+        width: 60px;
+        height: 100px;
+        background: #e38f66;
+        z-index: -1;
+      }
+      .c {
+        background: #62306d;
+        position: absolute;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+      .tl {
+        top: -20px;
+        left: -20px;
+      }
+      .tr {
+        top: -20px;
+        right: -20px;
+      }
+      .bl {
+        bottom: -20px;
+        left: -20px;
+      }
+      .br {
+        bottom: -20px;
+        right: -20px;
+      }
+      .small {
+        width: 20px;
+        height: 20px;
+      }
+      .small.tr {
+        top: -10px;
+        right: -10px;
+      }
+      .small.br {
+        bottom: -10px;
+        right: -10px;
+      }
+    </style>
+  </body>
+</html>
