@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <div></div>
+    <style>
+      body {
+        background: #f5d6b4;
+        position: relative;
+      }
+      div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50px) translateY(15px);
+        width: 150px;
+        height: 50px;
+        background: #d86f45;
+        border-radius: 0 50px 50px 0;
+      }
+      div::before {
+        content: "";
+        height: 100px;
+        width: 100px;
+        background: #d86f45;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: -50px;
+      }
+      div::after {
+        content: "";
+        height: 100px;
+        width: 100px;
+        background: #d86f45;
+        border-radius: 50%;
+        position: absolute;
+        top: -80px;
+        right: 20px;
+      }
+    </style>
+  </body>
+</html>

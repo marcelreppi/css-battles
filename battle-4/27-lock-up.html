@@ -1,0 +1,54 @@
+<html>
+  <body>
+    <div>
+      <span></span>
+    </div>
+
+    <style>
+      body {
+        background: #e38f66;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background: #aa445f;
+        border-radius: 50%;
+        position: relative;
+      }
+      div::before {
+        content: "";
+        height: 70px;
+        width: 70px;
+        background: #f7ec7d;
+        position: absolute;
+        top: 100px;
+        left: 30;
+        border-radius: 0 0 0 100%;
+      }
+      div::after {
+        content: "";
+        height: 70px;
+        width: 70px;
+        background: #f7ec7d;
+        position: absolute;
+        top: 30px;
+        right: 30;
+        border-radius: 0 100% 0 0;
+      }
+      span {
+        width: 80px;
+        height: 80px;
+        background: #aa445f;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 1;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <style>
+      body {
+        background: #62306d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background: #f7ec7d;
+        border-radius: 50%;
+        position: relative;
+      }
+      .left {
+        margin-right: 40px;
+      }
+      .left::after {
+        content: "";
+        height: 150px;
+        width: 100px;
+        background: #aa445f;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 50px;
+      }
+      .right::after {
+        content: "";
+        height: 150px;
+        width: 100px;
+        background: #e38f66;
+        position: absolute;
+        top: 0px;
+        z-index: -1;
+        border-radius: 50px;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <div>
+      <span class="c a"></span>
+      <span class="tc"></span>
+      <span class="tc a"></span>
+      <span class="c"></span>
+      <span class="bc"></span>
+      <span class="c a"></span>
+      <span class="c"></span>
+      <span class="bc a"></span>
+    </div>
+
+    <style>
+      body {
+        background: #1a4341;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 280px;
+        height: 140px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+      }
+      span {
+        width: 50px;
+        height: 50px;
+        background: #f3ac3c;
+      }
+      .a {
+        background: #998235;
+      }
+      .c {
+        border-radius: 50%;
+      }
+      .tc {
+        border-radius: 50% 50% 0 0;
+      }
+      .bc {
+        border-radius: 0 0 50% 50%;
+      }
+    </style>
+  </body>
+</html>

@@ -28,6 +28,9 @@
       <div id="battle-3">
         <h2>Battle #3 - Cursor</h2>
       </div>
+      <div id="battle-4">
+        <h2>Battle #4 - Display</h2>
+      </div>
     </div>
   </body>
 
@@ -128,10 +131,21 @@
       "Matrix",
     ]
     const battle3 = ["Cube", "Ticket"]
+    const battle4 = [
+      "SitePoint Logo",
+      "Cloud",
+      "Boxception",
+      "Switches",
+      "Blossom",
+      "Smiley",
+      "Lock Up",
+      "Cups & Balls",
+    ]
+    const battles = [battle1, battle2, battle3, battle4]
 
-    addBattle("battle-1", battle1)
-    addBattle("battle-2", battle2)
-    addBattle("battle-3", battle3)
+    for (let i = 0; i < battles.length; i++) {
+      addBattle(`battle-${i + 1}`, battles[i])
+    }
   </script>
   <noscript>
     <style>

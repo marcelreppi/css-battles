@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <div class="left"></div>
+    <div class="right"></div>
+
+    <style>
+      body {
+        background: #222;
+        position: relative;
+      }
+      div {
+        position: absolute;
+        width: 100px;
+        height: 30px;
+        border-top-left-radius: 10px;
+      }
+      div::before {
+        content: "";
+        width: 30px;
+        height: 55px;
+        top: 25px;
+        left: 0px;
+        position: absolute;
+        border-bottom-right-radius: 5px;
+      }
+      .left {
+        left: 112px;
+        top: 85px;
+        background: #f2994a;
+        transform: rotate(-45deg);
+      }
+      .left::before {
+        background: #f2994a;
+      }
+      .right {
+        left: 170px;
+        top: 168px;
+        background: #2d9cdb;
+        transform: rotate(135deg);
+      }
+      .right::before {
+        background: #2d9cdb;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <main>
+      <div class="t l"></div>
+      <div class="t r"></div>
+      <div class="b"></div>
+    </main>
+
+    <style>
+      body {
+        background: #6592cf;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        width: 400px;
+        height: 300px;
+        position: relative;
+      }
+      div {
+        position: absolute;
+        width: 120px;
+        height: 60; /* as the half of the width */
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        border: 20px solid #060f55;
+        border-bottom: 0;
+        box-sizing: border-box;
+      }
+      .t {
+        top: 32px;
+      }
+      .l {
+        left: 32px;
+      }
+      .r {
+        right: 32px;
+      }
+      .b {
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+      }
+    </style>
+  </body>
+</html>

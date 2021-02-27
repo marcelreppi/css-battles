@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <div></div>
+    <style>
+      body {
+        background: #f3ac3c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background: #1a4341;
+        position: relative;
+      }
+      div::before {
+        content: "";
+        height: 100px;
+        width: 100px;
+        background: #998235;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+      div::after {
+        content: "";
+        height: 50px;
+        width: 50px;
+        background: #f3ac3c;
+        position: absolute;
+        bottom: 0px;
+        left: 50px;
+      }
+    </style>
+  </body>
+</html>
