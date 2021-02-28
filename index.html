@@ -19,20 +19,7 @@
   >
     <h1>CSS Battles</h1>
 
-    <div class="container">
-      <div id="battle-1">
-        <h2>Battle #1 - Pilot Battle</h2>
-      </div>
-      <div id="battle-2">
-        <h2>Battle #2 - Visibility</h2>
-      </div>
-      <div id="battle-3">
-        <h2>Battle #3 - Cursor</h2>
-      </div>
-      <div id="battle-4">
-        <h2>Battle #4 - Display</h2>
-      </div>
-    </div>
+    <div id="container"></div>
   </body>
 
   <style>
@@ -58,14 +45,14 @@
       text-align: center;
     }
 
-    .container {
+    #container {
       width: 80%;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    .container > div {
+    #container > div {
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -91,28 +78,39 @@
   <script>
     const pad = (x) => (x < 10 ? `0${x}` : x.toString())
     const baseURL = "https://marcelreppi.github.io/css-battles"
-    let count = 0
+    let battleCount = 0
+    let targetCount = 0
+    const container = document.getElementById("container")
 
-    function addBattle(parentId, battles) {
+    function addBattle(title, targets) {
+      battleCount++
+      const battleDiv = document.createElement("div")
+
+      // Title
+      const battleTitleH2 = document.createElement("h2")
+      battleTitleH2.textContent = `Battle #${battleCount} - ${title}`
+      battleDiv.appendChild(battleTitleH2)
+
+      // Targets
       const olTag = document.createElement("ol")
-      olTag.start = count + 1
+      olTag.start = targetCount + 1
 
-      for (let i = 0; i < battles.length; i++) {
-        const battle = battles[i]
+      for (let i = 0; i < targets.length; i++) {
+        const target = targets[i]
         const liTag = document.createElement("li")
         const aTag = document.createElement("a")
-        const battleFilename = battle.toLowerCase().split(" ").join("-")
+        const battleFilename = target.toLowerCase().split(" ").join("-")
         aTag.href = [
           baseURL,
           "/",
-          parentId,
+          battleCount,
           "/",
-          pad(count + i + 1),
+          pad(targetCount + i + 1),
           "-",
           battleFilename,
           ".html",
         ].join("")
-        aTag.textContent = battle
+        aTag.textContent = target
         aTag.target = "_blank"
         aTag.rel = "noopener noreferrer"
 
@@ -120,49 +118,66 @@
         olTag.append(liTag)
       }
 
-      const parent = document.getElementById(parentId)
-      parent.append(olTag)
-
-      count += battles.length
+      battleDiv.append(olTag)
+      container.append(battleDiv)
+      targetCount += battles.length
     }
 
-    const battle1 = [
-      "Simply Square",
-      "Carrom",
-      "Push Button",
-      "Ups n Downs",
-      "Acid Rain",
-      "Missing Slice",
-      "Leafy Trail",
-      "Forking Crazy",
-      "Tesseract",
-      "Cloaked Spirits",
-      "Eye of Sauron",
-      "Wiggly Moustache",
+    const battles = [
+      {
+        title: "Pilot Battle",
+        targets: [
+          "Simply Square",
+          "Carrom",
+          "Push Button",
+          "Ups n Downs",
+          "Acid Rain",
+          "Missing Slice",
+          "Leafy Trail",
+          "Forking Crazy",
+          "Tesseract",
+          "Cloaked Spirits",
+          "Eye of Sauron",
+          "Wiggly Moustache",
+        ],
+      },
+      {
+        title: "Visibility",
+        targets: [
+          "Totally Triangle",
+          "Web Maker Logo",
+          "Overlap",
+          "Eye of the Tiger",
+          "Fidget Spinner",
+          "Matrix",
+        ],
+      },
+      {
+        title: "Cursor",
+        targets: ["Cube", "Ticket"],
+      },
+      {
+        title: "Display",
+        targets: [
+          "SitePoint Logo",
+          "Cloud",
+          "Boxception",
+          "Switches",
+          "Blossom",
+          "Smiley",
+          "Lock Up",
+          "Cups & Balls",
+        ],
+      },
+      {
+        title: "Inline",
+        targets: ["Suffocate", "Horizon"],
+      },
     ]
-    const battle2 = [
-      "Totally Triangle",
-      "Web Maker Logo",
-      "Overlap",
-      "Eye of the Tiger",
-      "Fidget Spinner",
-      "Matrix",
-    ]
-    const battle3 = ["Cube", "Ticket"]
-    const battle4 = [
-      "SitePoint Logo",
-      "Cloud",
-      "Boxception",
-      "Switches",
-      "Blossom",
-      "Smiley",
-      "Lock Up",
-      "Cups & Balls",
-    ]
-    const battles = [battle1, battle2, battle3, battle4]
 
     for (let i = 0; i < battles.length; i++) {
-      addBattle(`battle-${i + 1}`, battles[i])
+      const { title, targets } = battles[i]
+      addBattle(title, targets)
     }
   </script>
   <noscript>
