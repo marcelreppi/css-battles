@@ -1,10 +1,13 @@
 <html>
   <body>
-    <div class="lr l"></div>
-    <div class="lr r"></div>
-    <div class="c"></div>
-    <div class="ud u"></div>
-    <div class="ud d"></div>
+    <div class="container">
+      <div class="lr l"></div>
+      <div class="lr r"></div>
+      <div class="c"></div>
+      <div class="ud u"></div>
+      <div class="ud d"></div>
+    </div>
+
     <style>
       html,
       body {
@@ -15,7 +18,13 @@
         background: #09042a;
         height: 100%;
         width: 100%;
-        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 400px;
+        height: 300px;
         position: relative;
       }
       .lr {
