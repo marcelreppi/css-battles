@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../normalize.css" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div class="outer">
+      <div class="lines"></div>
+    </div>
+
+    <style>
+      body {
+        background: #1a4341;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .outer {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: #1a4341;
+        overflow: hidden;
+        position: relative;
+      }
+      .outer::before {
+        content: "";
+        width: 200px;
+        height: 200px;
+        background: #998235;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        clip-path: polygon(0% 0%, 100% 0, 100% 30px, 0 30px);
+      }
+      .outer::after {
+        content: "";
+        width: 200px;
+        height: 200px;
+        background: #998235;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        clip-path: polygon(0% 85%, 100% 85%, 100% 100%, 0 100%);
+      }
+      .lines {
+        width: 300px;
+        height: 20px;
+        background: #f3ac3c;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .lines::before {
+        content: "";
+        width: 300px;
+        height: 20px;
+        background: #f3ac3c;
+        position: absolute;
+        top: -40px;
+      }
+      .lines::after {
+        content: "";
+        width: 300px;
+        height: 20px;
+        background: #f3ac3c;
+        position: absolute;
+        top: 40px;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../normalize.css" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <div class="f"></div>
+    <div class="g"></div>
+
+    <style>
+      body {
+        background: #6592cf;
+        height: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 3fr 1fr 2fr 2fr;
+        grid-template-rows: 3fr 1fr 2fr;
+      }
+      .a {
+        background: #fff1c1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .b {
+        background: #fe5f55;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+      .c {
+        background: #a64942;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+      .d {
+        background: #293462;
+        grid-column-start: 4;
+        grid-column-end: last;
+        grid-row-start: 1;
+        grid-row-end: last;
+      }
+      .e {
+        background: #293462;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: last;
+      }
+      .f {
+        background: #a64942;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: last;
+      }
+      .g {
+        background: #fe5f55;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: last;
+      }
+    </style>
+  </body>
+</html>

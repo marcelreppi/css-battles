@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../normalize.css" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div class="t"></div>
+    <div class="m"></div>
+    <div class="b"></div>
+
+    <style>
+      body {
+        background: #007065;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        height: 100%;
+      }
+      div {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0px 125px 100px 125px;
+      }
+      .m {
+        z-index: 2;
+        border-color: transparent transparent #f5c181 transparent;
+      }
+      .t {
+        border-color: transparent transparent #ffeecf transparent;
+        transform: translateY(50px);
+        z-index: 3;
+      }
+      .b {
+        border-color: transparent transparent #00a79d transparent;
+        transform: translateY(-50px);
+        z-index: 1;
+      }
+    </style>
+  </body>
+</html>

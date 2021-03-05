@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../normalize.css" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tl"></div>
+      <div class="tr"></div>
+      <div class="bl"></div>
+      <div class="br"></div>
+    </div>
+
+    <style>
+      body {
+        background: #6592cf;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 200px;
+        height: 200px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .container::before {
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: #6592cf;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .tl {
+        width: 50px;
+        height: 100px;
+        margin-right: 50px;
+        background: #243d83;
+      }
+      .tr {
+        width: 100px;
+        height: 100px;
+        background: #243d83;
+        border-top-right-radius: 100px;
+      }
+      .bl {
+        width: 100px;
+        height: 100px;
+        background: #243d83;
+        border-bottom-left-radius: 100px;
+      }
+      .br {
+        width: 100px;
+        height: 100px;
+        background: #243d83;
+        border-bottom-right-radius: 100px;
+      }
+    </style>
+  </body>
+</html>

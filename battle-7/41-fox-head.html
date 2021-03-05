@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../normalize.css" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div class="l"></div>
+    <div class="r"></div>
+
+    <style>
+      body {
+        background: #293462;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 50px;
+        height: 140px;
+        background: #fe5f55;
+        position: relative;
+      }
+      .l {
+        border-top-right-radius: 40px;
+      }
+      .l::before {
+        content: "";
+        width: 50px;
+        height: 40px;
+        background: #293462;
+        position: absolute;
+        bottom: 0;
+        border-top-right-radius: 40px;
+      }
+      .l::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background: #293462;
+        position: absolute;
+        bottom: 50px;
+        left: 15px;
+        border-radius: 50%;
+      }
+      .r {
+        border-top-left-radius: 40px;
+      }
+      .r::before {
+        content: "";
+        width: 50px;
+        height: 40px;
+        background: #293462;
+        position: absolute;
+        bottom: 0;
+        border-top-left-radius: 40px;
+      }
+      .r::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background: #293462;
+        position: absolute;
+        bottom: 50px;
+        left: 5px;
+        border-radius: 50%;
+      }
+    </style>
+  </body>
+</html>
